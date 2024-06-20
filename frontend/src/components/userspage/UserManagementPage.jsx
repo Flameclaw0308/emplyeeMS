@@ -61,7 +61,7 @@ function UserManagementPage() {
    return (
     <div className="user-management-container">
       <h2>Users Management Page</h2>
-      <button className='reg-button'> <Link to="/register">Add User</Link></button>
+     {isAdmin && <button className='reg-button'> <Link to="/register">Add User</Link></button>}
       <table>
         <thead>
           <tr>
@@ -69,7 +69,7 @@ function UserManagementPage() {
             <th>Name</th>
             <th>Email</th>
             <th>City</th>
-            {isAdmin && <th>Actions</th>}
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>

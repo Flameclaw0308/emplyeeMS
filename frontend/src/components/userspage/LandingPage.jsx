@@ -92,12 +92,21 @@ function LandingPage() {
       setIsDownloading2(false);
     }
   };
+  const handleclick=()=>{
+    if(!isAdmin)
+      {
+        alert("You do not have access");
+      }
+      else{
+        navigate("/register");
+      }
+  }
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '75vh' }}>
       <div>
         <button style={buttonStyle}><Link to={`/user-management`}>View Users</Link></button>
-        <button style={buttonStyle}><Link to={`/register`}>Add Users</Link></button>
+       <button style={buttonStyle} onClick={handleclick}>Add Users</button>
         <button style={buttonStyle} onClick={handleDownloadExcel}>Export to excel</button>
         <button style={buttonStyle} onClick={handleDownloadPdf}>Export to pdf</button>
         <button style={buttonStyle} onClick={handleLogout}>Logout</button>
